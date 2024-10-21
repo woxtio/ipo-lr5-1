@@ -1,17 +1,16 @@
-def glsn(char):
-    glsn = "аеёиоуыэюяАЕЁИОУЫЭЮЯ"
-    return char in glsn
-def sogl(char):
-    sogl = "бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ"
-    return char in sogl
-user_input = input("Введите строку на русском языке: ")
-glsn_count = 0
-sogl_count = 0
-for char in user_input:
-    if glsn(char):
-        glsn_count += 1
-    elif sogl(char):
-        sogl_count += 1
-print(f"Длина строки: {len(user_input)}")
-print(f"Количество гласных: {glsn_count}")
-print(f"Количество согласных: {sogl_count}")
+string = str(input("Введите строку: ")) #Приглашение для ввода строки
+a = len(string)  #Определение длины строки
+glasn = "аеёиоуыэюяАЕЁИОУЫЭЮЯ"  #Переменная для гласных
+soglasn= "бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ" #Переменная для согласных
+count=0 #Начало счётчика для гласных
+count1=0 #Начало счётчика для согласных
+for i in string: #Цикл для перебора элементов в переменной string
+    for c in glasn: #Цикл для перебора элементов в переменной glasn
+         if c in i: #Если есть элементы с в i
+              count += 1 #Увеличиваем счётчик на один
+    for f in soglasn: #Цикл для перебора элементов в soglasn
+         if f in i: #Если есть элементы f в i
+              count1+=1 #Увеличиваем счётчик на один      
+print("Длина строки: ", a) #Выводим переменную а
+print("Количество гласных: ", count) #Выводим переменную count
+print("Количество согласных: ", count1) #Выводим переменную count1
